@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* ── Tokens: the Sealed Instrument world ─────────────────────────────── */
+:root {
+  --paper: #ecebe8;          /* security paper, cool neutral (sampled from the approved comp) */
+  --paper-bright: #f4f4f0;
+  --violet: #3a2b8c;         /* stamp-violet ink: brand, marks, drenched fields */
+  --violet-deep: #2c1f73;
+  --violet-soft: #8a7ec2;    /* guilloche line tint on paper */
+  --ink: #14194a;            /* intaglio blue-black: running text */
+  --ink-soft: #3d4270;
+  --seal: #c4302b;           /* reserved: يُرجَّح عدم مطابقته only */
+
+  --font-ui: var(--font-readex), "Readex Pro", system-ui, sans-serif;
+  --font-doc: var(--font-markazi), "Markazi Text", serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-violet: var(--violet);
+  --color-ink: var(--ink);
+  --color-seal: var(--seal);
+  --font-ui: var(--font-ui);
+  --font-doc: var(--font-doc);
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+html {
+  background: var(--paper) image-set(url("/assets/plates/paper-ground.webp") type("image/webp"), url("/assets/plates/paper-ground.png") type("image/png")) repeat;
+  background-size: 512px 512px;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scrollbar-color: var(--violet) var(--paper);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+::selection {
+  background: var(--violet);
+  color: var(--paper-bright);
+}
+
+:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.25em;
+}
+
+/* Rubber-stamp ink: speckled coverage for words printed by a stamp. */
+.ink-grain {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.5 1.72'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.5 1.72'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  -webkit-mask-size: 160px;
+  mask-size: 160px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Stamps below the fold are pressed as they come into view (see StampReveal).
+   Without JS they simply stay visible. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-stamp][data-armed]:not([data-inview]) { opacity: 0; }
+  [data-stamp][data-inview] {
+    animation: stamp-press 520ms var(--ease-out) calc(var(--i, 0) * 120ms) backwards;
+  }
+}
+@keyframes stamp-press {
+  0% { opacity: 0; scale: 1.45; filter: blur(2px); }
+  62% { opacity: 1; scale: 0.97; filter: blur(0); }
+  100% { scale: 1; }
+}
+
+/* ── Buttons: one system (mentor feedback, 2026-10-01: buttons did not read as pressable) ──
+   The stub keeps its notched ends, but the notches are cut from a ::before plate, so the element
+   itself can carry a real lift shadow (filter on the parent; see the Filter Shadow Rule). Every
+   action button also carries a leading-to-trailing arrow that nudges on hover. */
+.btn {
+  --btn-bg: var(--violet);
+  --btn-tex: image-set(url("/assets/plates/violet-ground.webp") type("image/webp"), url("/assets/plates/violet-ground.png") type("image/png"));
+  --btn-tex-size: 640px;
+  --btn-fg: var(--paper-bright);
+  --btn-shadow: rgb(20 25 74 / 0.28);
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65em;
+  min-height: 56px;
+  padding: 0 34px;
+  border: 0;
+  background: none;
+  color: var(--btn-fg);
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  filter: drop-shadow(0 1px 1px rgb(20 25 74 / 0.2)) drop-shadow(0 8px 12px var(--btn-shadow));
+  transition: transform 160ms var(--ease-out), filter 160ms var(--ease-out);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--btn-bg) var(--btn-tex);
+  background-size: var(--btn-tex-size);
+  --notch: 5px;
+  --pitch: 13px;
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at 0 50%, #0000 97%, #000) 0 0 / 51% var(--pitch) repeat-y,
+    radial-gradient(circle var(--notch) at 100% 50%, #0000 97%, #000) 100% 0 / 51% var(--pitch) repeat-y;
+  mask:
+    radial-gradient(circle var(--notch) at 0 50%, #0000 97%, #000) 0 0 / 51% var(--pitch) repeat-y,
+    radial-gradient(circle var(--notch) at 100% 50%, #0000 97%, #000) 100% 0 / 51% var(--pitch) repeat-y;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 2px 2px rgb(20 25 74 / 0.22)) drop-shadow(0 14px 18px var(--btn-shadow));
+}
+.btn:active { transform: translateY(0) scale(0.98); transition-duration: 80ms; }
+.btn-arrow { width: 1.15em; height: 1.15em; flex: none; transition: translate 160ms var(--ease-out); }
+.btn:hover .btn-arrow { translate: -4px 0; }
+[dir="ltr"] .btn-arrow { scale: -1 1; }
+[dir="ltr"] .btn:hover .btn-arrow { translate: 4px 0; }
+
+/* Paper stub, for violet grounds. */
+.btn-paper {
+  --btn-bg: var(--paper-bright);
+  --btn-tex: image-set(url("/assets/plates/paper-ground.webp") type("image/webp"), url("/assets/plates/paper-ground.png") type("image/png"));
+  --btn-tex-size: 512px;
+  --btn-fg: var(--violet);
+  --btn-shadow: rgb(10 6 40 / 0.55);
+}
+/* Secondary: an outlined slip, no fill, so it never competes with the primary. */
+.btn-ghost {
+  --btn-fg: var(--violet);
+  filter: none;
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+.btn-ghost::before { display: none; }
+.btn-ghost:hover { filter: none; background: rgb(58 43 140 / 0.08); }
+.btn-ghost.on-violet { --btn-fg: var(--paper-bright); }
+.btn-ghost.on-violet:hover { background: rgb(244 244 240 / 0.12); }
+.btn-sm { min-height: 44px; padding: 0 20px; font-size: 1rem; }
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  filter: none;
+  opacity: 0.45;
+  transform: none;
+}
+.btn:disabled .btn-arrow { translate: 0 0; }
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn-arrow { transition: none; }
+  .btn:hover { transform: none; }
+}

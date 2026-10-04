@@ -1,0 +1,33 @@
+.stamp {
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.15em;
+  width: var(--stamp-w, 170px);
+  text-align: center;
+  font-size: var(--stamp-font, 15px);
+  line-height: 1.1;
+}
+.plate {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.word,
+.id {
+  position: relative;
+  rotate: var(--rot, -7deg);
+  white-space: nowrap;
+}
+.word { font-weight: 600; }
+.id { font-size: 0.78em; font-weight: 500; white-space: nowrap; }
+
+.nonCompliant { color: var(--seal); --rot: -8deg; }
+.review { color: var(--violet); --rot: -6deg; }
+.review .word { white-space: normal; max-width: 72%; line-height: 1.15; }
+.abstain { color: var(--violet); --rot: -8deg; }
+.compliant { color: var(--violet); --rot: -4deg; width: calc(var(--stamp-w, 170px) * 0.66); font-size: calc(var(--stamp-font, 15px) * 1.05); }

@@ -1,0 +1,46 @@
+/* Violet header strip with a perforation rule (DESIGN.md: Navigation / Header Strip). */
+.bar {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 14px clamp(16px, 4vw, 48px) 20px;
+  background: var(--violet) image-set(url("/assets/plates/violet-ground.webp") type("image/webp"), url("/assets/plates/violet-ground.png") type("image/png"));
+  background-size: 640px;
+  color: var(--paper-bright);
+}
+.bar::after {
+  content: "";
+  position: absolute;
+  inset-inline: clamp(16px, 4vw, 48px);
+  bottom: 7px;
+  height: 5px;
+  background: radial-gradient(circle, rgb(244 244 240 / 0.8) 45%, transparent 50%) 0 0 / 12px 100% repeat-x;
+}
+.brand { display: block; color: #efeeea; }
+.brand svg { display: block; height: 34px; width: auto; }
+.title { margin: 0; font-size: 1.1rem; font-weight: 500; }
+.nav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: end; }
+.link {
+  display: inline-grid;
+  place-items: center;
+  min-height: 44px;
+  padding-inline: 14px;
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 500;
+  box-shadow: inset 0 0 0 1px rgb(244 244 240 / 0.35);
+  transition: background-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+.link:hover { background: rgb(244 244 240 / 0.12); box-shadow: inset 0 0 0 1px rgb(244 244 240 / 0.8); }
+.link[aria-current="page"] { background: var(--paper-bright); color: var(--violet); box-shadow: none; font-weight: 600; }
+@media (max-width: 900px) {
+  .bar { grid-template-columns: auto 1fr; gap: 12px; }
+  .title { display: none; }
+  .nav { gap: 4px; }
+  .link { padding-inline: 10px; font-size: 0.9rem; }
+}
+@media (max-width: 520px) {
+  .bar { grid-template-columns: 1fr; justify-items: start; }
+}

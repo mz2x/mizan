@@ -1,0 +1,11 @@
+{
+  "prompt": "Seamless tileable texture, 1024x1024, opaque. Cool neutral white security paper (match the reference crop's colour, about #ECEBE8; not cream, not yellow): very fine paper tooth, a few faint short fibres, extremely low contrast. NO lines, NO bands, NO folds, NO text, NO vignette, NO lighting gradient. Uniform across the whole tile so it repeats with no visible seams.\n",
+  "createdAt": "2026-09-30T19:26:53.443Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "background": "opaque",
+  "outputFormat": "png",
+  "refs": [
+    ".impeccable/build/crops/paper-ground-raw.png"
+  ]
+}

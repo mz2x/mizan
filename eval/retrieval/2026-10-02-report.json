@@ -1,0 +1,130 @@
+{
+  "n": 90,
+  "at": "2026-10-02T16:27:36.164Z",
+  "report": [
+    {
+      "name": "production: BM25 enriched ∪ plain (12+12)",
+      "recall": 0.9333333333333333,
+      "mrr": 0.7158963104796442,
+      "avgCandidates": 16.633333333333333,
+      "missed": [
+        "S02",
+        "S09",
+        "R02",
+        "R02",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "name": "BM25 hybrid, RRF top 17",
+      "recall": 0.9444444444444444,
+      "mrr": 0.7170947570947572,
+      "avgCandidates": 17,
+      "missed": [
+        "S02",
+        "S09",
+        "R02",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "name": "semantic only (bge-m3), top 17",
+      "recall": 0.7777777777777778,
+      "mrr": 0.5379431216931219,
+      "avgCandidates": 17,
+      "missed": [
+        "S04",
+        "S04",
+        "S05",
+        "S05",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S08",
+        "S08",
+        "S09",
+        "S09",
+        "S10",
+        "R01",
+        "R01",
+        "R02",
+        "R02",
+        "R03",
+        "R03",
+        "R04"
+      ]
+    },
+    {
+      "name": "hybrid: BM25 ×2 + semantic (bge-m3), RRF top 17",
+      "recall": 0.9333333333333333,
+      "mrr": 0.7155636075979216,
+      "avgCandidates": 17,
+      "missed": [
+        "S09",
+        "R01",
+        "R02",
+        "R02",
+        "R03",
+        "R04"
+      ]
+    },
+    {
+      "name": "production ∪ semantic top 5 (bge-m3)",
+      "recall": 0.9444444444444444,
+      "mrr": 0.7165907549240886,
+      "avgCandidates": 18.644444444444446,
+      "missed": [
+        "S09",
+        "R02",
+        "R02",
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "name": "semantic only (qwen3-embedding:0.6b), top 17",
+      "recall": 0.9,
+      "mrr": 0.5469849749016419,
+      "avgCandidates": 17,
+      "missed": [
+        "S08",
+        "S08",
+        "S08",
+        "S08",
+        "S09",
+        "R01",
+        "R02",
+        "R02",
+        "R04"
+      ]
+    },
+    {
+      "name": "hybrid: BM25 ×2 + semantic (qwen3-embedding:0.6b), RRF top 17",
+      "recall": 0.9444444444444444,
+      "mrr": 0.7467117958294431,
+      "avgCandidates": 17,
+      "missed": [
+        "S02",
+        "S09",
+        "R02",
+        "R02",
+        "R04"
+      ]
+    },
+    {
+      "name": "production ∪ semantic top 5 (qwen3-embedding:0.6b)",
+      "recall": 0.9555555555555556,
+      "mrr": 0.7171347005725235,
+      "avgCandidates": 18.544444444444444,
+      "missed": [
+        "S09",
+        "R02",
+        "R02",
+        "R03"
+      ]
+    }
+  ]
+}

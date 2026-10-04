@@ -1,0 +1,11 @@
+{
+  "prompt": "Recreate the style of the provided rubber-stamp reference as a new clean production asset: a ROUND rubber-stamp impression, a double concentric circle ring (thick outer ring, thin inner ring), in stamp violet #3A2B8C, rotated slightly, with the same uneven ink density, speckled grain, slight ink spread and gaps where the rubber did not print. NO words, NO letters, NO numbers, NO stars, interior empty (text is set separately in code). Genuine transparent alpha background, ink pixels opaque with natural partial alpha only where ink is thin. Output a transparent PNG cutout, centred with clear margins.\n",
+  "createdAt": "2026-09-30T19:54:42.170Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "background": "transparent",
+  "outputFormat": "png",
+  "refs": [
+    ".impeccable/build/crops/stamp-bracket.png"
+  ]
+}

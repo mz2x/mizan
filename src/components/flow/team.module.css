@@ -1,0 +1,151 @@
+/* Mizan's team: seven robots on a belt, then the committee. Paper panel on any ground. */
+.panel {
+  background: var(--paper-bright) image-set(url("/assets/plates/paper-ground.webp") type("image/webp"), url("/assets/plates/paper-ground.png") type("image/png"));
+  background-size: 512px;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgb(58 43 140 / 0.28), 0 24px 48px -28px rgb(10 6 40 / 0.55);
+}
+.scroller { overflow-x: auto; }
+.team {
+  position: relative;
+  min-width: 940px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+  padding: 28px 18px 10px;
+}
+.who {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 4px;
+  padding: 8px 4px 10px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+.who picture { display: contents; }
+.who img {
+  width: 100%;
+  max-width: 130px;
+  height: auto;
+  aspect-ratio: 1 / 1.1;
+  object-fit: contain;
+  filter: saturate(0.75) opacity(0.78);
+  transition: transform 420ms var(--ease-out), filter 420ms var(--ease-out);
+}
+.who[data-act] { background: rgb(58 43 140 / 0.07); }
+.who[data-act] img { transform: translateY(-10px) scale(1.07); filter: none; }
+.who:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.name { font-weight: 700; font-size: 1rem; }
+.role { min-height: 2.8em; font-size: 0.8rem; line-height: 1.4; color: var(--ink-soft); }
+.badge {
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+.model { color: var(--violet); }
+.human { color: var(--ink); }
+.bubble {
+  position: absolute;
+  top: -16px;
+  inset-inline: 4px;
+  z-index: 2;
+  padding: 6px 8px;
+  background: var(--ink);
+  color: var(--paper-bright);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 360ms var(--ease-out), transform 360ms var(--ease-out);
+  pointer-events: none;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  inset-inline-start: calc(50% - 7px);
+  border: 7px solid transparent;
+  border-bottom: 0;
+  border-top-color: var(--ink);
+}
+.who[data-act] .bubble { opacity: 1; transform: none; }
+
+/* The belt and the document riding it. */
+.belt {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 128px;
+  background: repeating-linear-gradient(90deg, rgb(58 43 140 / 0.35) 0 10px, transparent 10px 18px) 50% 40px / 100% 2px no-repeat;
+}
+.item {
+  position: absolute;
+  top: 0;
+  width: 130px;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  transition: inset-inline-start 900ms var(--ease-out);
+}
+.tkbox { display: grid; place-items: center; height: 92px; transform: scale(1.45); transform-origin: 50% 60%; }
+.tklbl { padding-inline: 6px; background: var(--paper-bright); font-size: 0.78rem; font-weight: 700; color: var(--violet); white-space: nowrap; }
+.tk { position: relative; display: block; }
+.tk i { display: block; font-style: normal; }
+@media (prefers-reduced-motion: no-preference) {
+  .tk { animation: pop 520ms var(--ease-out) both; }
+}
+@keyframes pop { from { opacity: 0; transform: translateY(8px) scale(0.9); } }
+.doc { width: 46px; height: 60px; display: grid; gap: 5px; align-content: start; padding: 9px 7px; background: var(--paper-bright); box-shadow: inset 0 0 0 1.5px var(--violet), 0 4px 10px -6px rgb(20 25 74 / 0.6); }
+.doc i { height: 3px; background: rgb(58 43 140 / 0.35); }
+.doc .redact { height: 6px; background: var(--ink); }
+.doc .short { width: 60%; }
+.lines { background: var(--paper-bright) repeating-linear-gradient(180deg, transparent 0 5px, rgb(58 43 140 / 0.3) 5px 6.5px) 8px 3px / 34px 10px no-repeat; }
+.slips { width: 70px; height: 60px; }
+.slips i { position: absolute; width: 52px; height: 16px; background: var(--paper-bright) repeating-linear-gradient(180deg, transparent 0 5px, rgb(58 43 140 / 0.3) 5px 6.5px) 8px 3px / 34px 10px no-repeat; box-shadow: inset 0 0 0 1.5px var(--violet); border-inline: 3px dotted var(--violet); }
+.slips i:nth-child(1) { top: 4px; inset-inline-start: 0; transform: rotate(-6deg); }
+.slips i:nth-child(2) { top: 22px; inset-inline-start: 12px; }
+.slips i:nth-child(3) { top: 40px; inset-inline-start: 4px; transform: rotate(5deg); }
+.sorted { width: 80px; height: 60px; }
+.keep { position: absolute; top: 18px; inset-inline-start: 0; width: 52px; height: 20px; background: var(--paper-bright) repeating-linear-gradient(180deg, transparent 0 6px, rgb(58 43 140 / 0.3) 6px 7.5px) 6px 4px / 30px 12px no-repeat; box-shadow: inset 0 0 0 2px var(--violet); }
+.keep::after { content: "✓"; position: absolute; inset-inline-end: 4px; top: -1px; color: var(--violet); font-weight: 700; font-size: 0.8rem; }
+.drop { position: absolute; top: 24px; inset-inline-end: 0; width: 16px; height: 12px; background: rgb(61 66 112 / 0.25); transform: rotate(18deg); }
+.pair { width: 84px; height: 60px; }
+.sl { position: absolute; top: 6px; inset-inline-start: 0; width: 56px; height: 22px; background: var(--paper-bright) repeating-linear-gradient(180deg, transparent 0 6px, rgb(58 43 140 / 0.3) 6px 7.5px) 8px 4px / 40px 14px no-repeat; box-shadow: inset 0 0 0 2px var(--violet); }
+.idx { position: absolute; top: 30px; inset-inline-start: 14px; padding: 3px 5px; font-size: 0.6rem; font-weight: 700; color: var(--violet); background: var(--paper-bright); box-shadow: inset 0 0 0 1.5px var(--violet), 0 4px 8px -4px rgb(20 25 74 / 0.5); white-space: nowrap; }
+.note { position: absolute; top: 30px; inset-inline-start: 16px; padding: 3px 7px; font-size: 0.68rem; font-weight: 700; color: var(--violet); background: var(--paper-bright); outline: 1.5px dashed var(--violet); }
+/* Seal red: the stamped verdict is «likely non-compliant» (DESIGN.md, The One Red Rule). */
+.seal { position: absolute; top: 20px; inset-inline-start: 16px; width: 56px; height: 26px; display: grid; place-items: center; font-size: 0.62rem; font-weight: 700; color: var(--seal); background: rgb(244 244 240 / 0.85); border: 2px solid var(--seal); outline: 1px solid var(--seal); outline-offset: 2px; transform: rotate(-10deg); }
+.folder { width: 64px; height: 48px; margin-top: 8px; }
+.folder i { position: absolute; inset: 0; background: var(--violet); box-shadow: 0 6px 12px -6px rgb(20 25 74 / 0.7); }
+.folder::before { content: ""; position: absolute; top: -7px; inset-inline-start: 0; width: 26px; height: 8px; background: var(--violet); }
+
+.handover {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 18px;
+  align-items: center;
+  padding: 18px 22px;
+  border-top: 2px dashed rgb(58 43 140 / 0.3);
+}
+.committee { justify-self: center; width: 100%; max-width: 340px; }
+.committee img { width: 100%; height: auto; display: block; }
+.humanTitle { margin: 8px 0 6px; font-size: 1.25rem; font-weight: 600; }
+.humanBody { margin: 0; max-width: 60ch; font-size: 1rem; line-height: 1.75; color: var(--ink-soft); }
+.acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.acts span { padding: 6px 12px; font-size: 0.92rem; font-weight: 700; color: var(--violet); box-shadow: inset 0 0 0 1.5px var(--violet); }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 18px; border-top: 1px dashed rgb(58 43 140 / 0.3); }
+.now { margin: 0; font-size: 0.95rem; color: var(--ink); }
+
+@media (max-width: 760px) {
+  .handover { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .who img, .bubble, .item { transition: none; }
+}

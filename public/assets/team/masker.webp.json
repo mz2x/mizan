@@ -1,0 +1,7 @@
+{
+  "model": "gpt-image-2.5-flare",
+  "prompt": "Flat vector editorial illustration of a single friendly cartoon robot character, full body, standing, 3/4 view, centered with generous margin, on a fully transparent background. Strict limited palette only: deep stamp-violet #3A2B8C, ink navy #14194A, soft violet #8A7EC2, warm paper off-white #F4F4F0, pale grey-lilac shadows; no other colors. Clean thick rounded outlines in ink navy, simple shapes, subtle flat shading. No text, no letters, no numbers, no logos, no background scene, no frame, no humans. The robot is a sturdy BOXY robot: square head with a horizontal rectangular visor showing two small white dot eyes, rectangular ink-navy body with a paper-white chest panel, short antenna with a tiny violet bulb, simple jointed arms and legs. It holds an oversized black marker pen and is striking a thick black redaction bar across a sheet of paper.",
+  "createdAt": "2026-10-02T09:38:19.251Z",
+  "tool": "OpenAI images API (mentor-pivot session)",
+  "note": "WebP delivery copy (sharp: trim, fit 420px, q82) of a plate generated for the team view."
+}

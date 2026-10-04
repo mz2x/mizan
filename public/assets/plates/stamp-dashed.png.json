@@ -1,0 +1,11 @@
+{
+  "prompt": "Recreate this rubber-stamp impression as a clean production asset: ONLY the stamp frame and its ink, with NO words, NO letters, NO numbers inside (the text is set separately in code, so leave the interior empty). Keep the same rotation, the same ink colour, uneven ink density, speckled grain, slight ink spread at the edges and gaps where the rubber did not print. Remove the paper, the card edges, the perforations and any other text around it. Genuine transparent alpha background, ink pixels opaque with natural partial alpha only where the ink is thin. Output a transparent PNG cutout. Stamp: an empty dashed-outline oval seal in stamp violet #3A2B8C, rotated about -8 degrees, dashes evenly spaced.\n",
+  "createdAt": "2026-09-30T19:15:25.429Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "background": "transparent",
+  "outputFormat": "png",
+  "refs": [
+    ".impeccable/build/crops/stamp-dashed.png"
+  ]
+}

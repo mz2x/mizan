@@ -1,0 +1,11 @@
+{
+  "prompt": "Recreate the logotype in the provided crop as a clean production asset. Keep EVERY stroke, block, proportion, spacing, stroke weight and diamond-dot position exactly as in the reference crop (same square-Kufic grid construction, same overall width and height, same placement and margins). The only correction: the second letter from the right is yaa, so it has TWO small diamond dots side by side below it instead of one, so the word reads ميزان. No kasra, no other marks, no other text. Letters in paper white #EFEEEA with the same subtle paper-fibre grain as the reference. Remove the violet background completely: genuine transparent alpha around and inside the letters, white letters fully opaque. Output a transparent PNG cutout.\n",
+  "createdAt": "2026-09-30T19:18:18.983Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "background": "transparent",
+  "outputFormat": "png",
+  "refs": [
+    ".impeccable/build/crops/wordmark.png"
+  ]
+}

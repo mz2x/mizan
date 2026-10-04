@@ -1,0 +1,11 @@
+{
+  "prompt": "Use the provided crop as the approved visual reference and recreate it as a clean production asset at the target aspect ratio. This is a designed illustration plate. Output the same drawing, same style, same line weight and shading. Preserve silhouette, composition, perspective, palette (#3b2b8a, #eceae8, #594fa0), lighting, material, and texture exactly. Remove every piece of UI text, label, caption, button, and interface chrome that is not part of the artwork itself. Remove interface borders, card corners, and layout backgrounds; retain only shadows that belong to the referenced object itself. Do not add objects, change the concept, or restyle. Preserve the reference's placement, scale, and clear margins exactly; do not enlarge the subject to fill the frame. Remove the page ground and interior gaps to genuine transparent alpha. Keep white paint and other solid foreground colors opaque, preserve fine edges, and retain partial alpha only for genuinely translucent material or soft shadows in the reference. No chroma background, baked-in checkerboard, or matte. Output a transparent PNG cutout. Region: engraved guilloche rosette medallion in pale violet and white lines with a micro-text core of the word ميزان, transparent over the violet field.\n",
+  "createdAt": "2026-09-30T19:15:33.339Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "background": "transparent",
+  "outputFormat": "png",
+  "refs": [
+    ".impeccable/build/crops/rosette.png"
+  ]
+}

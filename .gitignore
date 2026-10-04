@@ -1,0 +1,66 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# impeccable: review captures and measuring scratch are regenerated, not versioned
+/.impeccable/review/
+/.impeccable/questions/
+/.impeccable/build/crops/
+/.impeccable/build/font-match/
+/.impeccable/build/scaffold/
+/.impeccable/build/comp-grid.png
+/.impeccable/config.local.json
+
+# never version keys (they live in ~/.config/mizan/)
+*.key
+
+# subagent-driven-development scratch
+/.superpowers/
+demo-video/
+
+# local dashboard database (PGlite, dev only)
+/.data/
+
+# Alinma decision texts are never versioned here: build them locally (see data/README.md)
+/data/corpus/
+/data/enrichment.jsonl
+/data/enrichment-sample.csv
+/data/*.jsonl

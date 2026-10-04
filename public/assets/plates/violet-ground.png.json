@@ -1,0 +1,11 @@
+{
+  "prompt": "Seamless tileable texture, 1024x1024, opaque. The printed ground of a banknote face in solid stamp-violet ink #3A2B8C (match the reference crop's violet exactly): flat matte offset ink with a very fine, even speckled grain and faint paper tooth showing through, extremely low contrast. NO lines, NO waves, NO patterns, NO text, NO rosettes, NO vignette, NO lighting gradient. Uniform across the whole tile so it repeats with no visible seams.\n",
+  "createdAt": "2026-09-30T19:26:56.048Z",
+  "tool": "impeccable generate-image",
+  "model": "gpt-image-2.5-flare",
+  "background": "opaque",
+  "outputFormat": "png",
+  "refs": [
+    ".impeccable/build/crops/violet-ground-raw.png"
+  ]
+}

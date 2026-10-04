@@ -1,0 +1,10 @@
+.page { display: grid; place-items: start center; padding: clamp(32px, 6vw, 80px) 16px; background: var(--paper, #ecebe8); min-block-size: 100vh; }
+.card { inline-size: min(100%, 760px); }
+.back { font-size: 0.92rem; color: var(--ink-soft); margin-block-end: 28px; }
+.back a { color: var(--violet-deep); text-decoration: underline; }
+.title { margin: 0 0 6px; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--violet-deep); }
+.updated { margin: 0 0 22px; font-size: 0.9rem; color: var(--ink-soft); }
+.intro { margin: 0 0 28px; font-size: 1.08rem; line-height: 1.85; color: var(--ink); }
+.section { padding-block: 16px; border-block-start: 1px solid rgb(58 43 140 / 0.18); }
+.section h2 { margin: 0 0 8px; font-size: 1.12rem; color: var(--violet); }
+.section p { margin: 0; line-height: 1.85; color: var(--ink); max-inline-size: 68ch; }
