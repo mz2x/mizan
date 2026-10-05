@@ -119,7 +119,7 @@ DESIGN.md            نظام التصميم
 **Every clause in your contract, with the ruling that governs it.**
 Mizan is a Sharia-review assistant for bank contracts. It checks each clause against the published decisions of the Alinma Bank Sharia committee. Each clause gets a verdict with the decision text quoted verbatim and its ID, and Mizan abstains when it finds no basis. It never issues a fatwa or an approval: the committee decides.
 
-🏆 **1st place, VentureX 2026 hackathon** (AI & Data track, King Saud University), team Midad: Mazen Bin Khunaizan ([@mz2x](https://github.com/mz2x)), Faisal Alshaya ([@faisalaas2018-hub](https://github.com/faisalaas2018-hub)) and Ahmad Alofisan ([@AhmadAlofisan](https://github.com/AhmadAlofisan)).
+🏆 **1st place, VentureX 2026 hackathon** (AI & Data track, King Saud University), team Midad: Mazen Bin Khunaizan (team lead, [@mz2x](https://github.com/mz2x)), Faisal Alshaya ([@faisalaas2018-hub](https://github.com/faisalaas2018-hub)) and Ahmad Alofisan ([@AhmadAlofisan](https://github.com/AhmadAlofisan)).
 
 Live prototype: **[mizansharia.com](https://mizansharia.com)** · How it works: [/how](https://mizansharia.com/how)
 
