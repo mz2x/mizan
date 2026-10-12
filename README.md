@@ -109,7 +109,7 @@ DESIGN.md            نظام التصميم
 | | |
 |---|---|
 | **مازن فهد بن خنيزان** · [@mz2x](https://github.com/mz2x) | قائد الفريق: المحرك، والقياس، والموقع، وتجربة الاستخدام |
-| **فيصل عبدالمجيد الشايع** · [@faisalaas2018-hub](https://github.com/faisalaas2018-hub) | تعريف المنتج، وقصة العرض، ومنهجية مجموعة الاختبار |
+| **فيصل عبدالمجيد الشايع** · [@Zirrof](https://github.com/Zirrof) | تعريف المنتج، وقصة العرض، ومنهجية مجموعة الاختبار |
 | **أحمد تيسير العفيصان** · [@AhmadAlofisan](https://github.com/AhmadAlofisan) | المدونة، وبنود الاختبار من القرارات، والاختبار اليدوي |
 
 ---
@@ -119,7 +119,7 @@ DESIGN.md            نظام التصميم
 **Every clause in your contract, with the ruling that governs it.**
 Mizan is a Sharia-review assistant for bank contracts. It checks each clause against the published decisions of the Alinma Bank Sharia committee. Each clause gets a verdict with the decision text quoted verbatim and its ID, and Mizan abstains when it finds no basis. It never issues a fatwa or an approval: the committee decides.
 
-🏆 **1st place, VentureX 2026 hackathon** (AI & Data track, King Saud University), team Midad: Mazen Bin Khunaizan (team lead, [@mz2x](https://github.com/mz2x)), Faisal Alshaya ([@faisalaas2018-hub](https://github.com/faisalaas2018-hub)) and Ahmad Alofisan ([@AhmadAlofisan](https://github.com/AhmadAlofisan)).
+🏆 **1st place, VentureX 2026 hackathon** (AI & Data track, King Saud University), team Midad: Mazen Bin Khunaizan (team lead, [@mz2x](https://github.com/mz2x)), Faisal Alshaya ([@Zirrof](https://github.com/Zirrof)) and Ahmad Alofisan ([@AhmadAlofisan](https://github.com/AhmadAlofisan)).
 
 Live prototype: **[mizansharia.com](https://mizansharia.com)** · How it works: [/how](https://mizansharia.com/how)
 
